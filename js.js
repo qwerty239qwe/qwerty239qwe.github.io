@@ -1,4 +1,4 @@
-$(".maincontent").hide()
+$(".maincontent").hide();
 
 $(".ab").click(
   function(){
