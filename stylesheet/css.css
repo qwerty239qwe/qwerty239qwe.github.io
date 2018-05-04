@@ -134,7 +134,7 @@ html {
   font-family: "Oswald";
 }
 .content .nav .ab, .content .nav .mem, .content .nav .pub, .content .nav .pro, .content .nav .cont, .content .nav .home {
-  width: 160px;
+  width: 120px;
   height: 30px;
   text-align: center;
   cursor: pointer;
