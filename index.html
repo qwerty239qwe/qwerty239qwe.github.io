@@ -5,6 +5,101 @@
   <script src="jquery-3.3.1.js"></script>
 </head>
 <body>
+  <script>
+    //$(".maincontent").hide();
+    document.getElementByClassName("maincontent").hide();
+    /*
+  $(".ab").click(function() {
+    $(".ab").addClass("clicked");
+    $(".mem").removeClass("clicked");
+    $(".pub").removeClass("clicked");
+    $(".pro").removeClass("clicked");
+    $(".cont").removeClass("clicked");
+    $(".maincontent").show(700);
+    $(".abcont").fadeIn();
+    $(".memcont").hide();
+    $(".pubcont").hide();
+    $(".procont").hide();
+    $(".contcont").hide();
+    $(".homepage").hide();
+  });
+    */
+    document.getElementByClassName("ab").onclick(function(){
+      document.getElementByClassName("ab").addClass("clicked");
+      document.getElementByClassName("mem").removeClass("clicked");
+      document.getElementByClassName("pub").removeClass("clicked");
+      document.getElementByClassName("pro").removeClass("clicked");
+      document.getElementByClassName("cont").removeClass("clicked");
+      document.getElementByClassName("maincontent").show(700);
+      document.getElementByClassName("abcont").fadeIn();
+      document.getElementByClassName("memcont").hide();
+      document.getElementByClassName("pubcont").hide();
+      document.getElementByClassName("procont").hide();
+      document.getElementByClassName("contcont").hide();
+      document.getElementByClassName("homepage").hide();
+    })
+  
+  $(".mem").click(function() {
+    $(".mem").addClass("clicked");
+    $(".ab").removeClass("clicked");
+    $(".pub").removeClass("clicked");
+    $(".pro").removeClass("clicked");
+    $(".cont").removeClass("clicked");
+    $(".maincontent").show(700);
+    $(".memcont").fadeIn();
+    $(".abcont").hide();
+    $(".pubcont").hide();
+    $(".procont").hide();
+    $(".contcont").hide();
+    $(".homepage").hide();
+  });
+
+  $(".pub").click(function() {
+    $(".pub").addClass("clicked");
+    $(".ab").removeClass("clicked");
+    $(".mem").removeClass("clicked");
+    $(".pro").removeClass("clicked");
+    $(".cont").removeClass("clicked");
+    $(".maincontent").show(700);
+    $(".pubcont").fadeIn();
+    $(".abcont").hide();
+    $(".memcont").hide();
+    $(".procont").hide();
+    $(".contcont").hide();
+    $(".homepage").hide();
+  });
+
+  $(".pro").click(function() {
+    $(".pro").addClass("clicked");
+    $(".ab").removeClass("clicked");
+    $(".pub").removeClass("clicked");
+    $(".mem").removeClass("clicked");
+    $(".cont").removeClass("clicked");
+    $(".maincontent").show(700);
+    $(".procont").fadeIn();
+    $(".abcont").hide();
+    $(".pubcont").hide();
+    $(".memcont").hide();
+    $(".contcont").hide();
+    $(".homepage").hide();
+  });
+
+  $(".cont").click(function() {
+    $(".cont").addClass("clicked");
+    $(".ab").removeClass("clicked");
+    $(".pub").removeClass("clicked");
+    $(".pro").removeClass("clicked");
+    $(".mem").removeClass("clicked");
+    $(".maincontent").show(700);
+    $(".contcont").fadeIn();
+    $(".abcont").hide();
+    $(".pubcont").hide();
+    $(".procont").hide();
+    $(".memcont").hide();
+    $(".homepage").hide();
+  });
+
+  </script>
 <div class="content">
   <div class="background"><img class="img1" src="https://upload.cc/i1/2018/03/27/9qUbu7.png"/><img class="img2" src="https://upload.cc/i1/2018/03/27/LDlbeT.png"/><img class="img3" src="https://upload.cc/i1/2018/03/27/a9nY4k.png"/><img class="img4" src="https://upload.cc/i1/2018/03/27/OAfqUI.png"/><img class="img5" src="https://upload.cc/i1/2018/03/27/1dqb9f.png"/></div>
   <div class="nav">
@@ -59,84 +154,6 @@
     </div>
   </div>
 </div>
-<script>
-  $(".maincontent").hide();
 
-$(".ab").click(function() {
-  $(".ab").addClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".abcont").fadeIn();
-  $(".memcont").hide();
-  $(".pubcont").hide();
-  $(".procont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-
-$(".mem").click(function() {
-  $(".mem").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".memcont").fadeIn();
-  $(".abcont").hide();
-  $(".pubcont").hide();
-  $(".procont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-
-$(".pub").click(function() {
-  $(".pub").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".pubcont").fadeIn();
-  $(".abcont").hide();
-  $(".memcont").hide();
-  $(".procont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-
-$(".pro").click(function() {
-  $(".pro").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".procont").fadeIn();
-  $(".abcont").hide();
-  $(".pubcont").hide();
-  $(".memcont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-
-$(".cont").click(function() {
-  $(".cont").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".contcont").fadeIn();
-  $(".abcont").hide();
-  $(".pubcont").hide();
-  $(".procont").hide();
-  $(".memcont").hide();
-  $(".homepage").hide();
-});
-
-</script>
 </body>
 </html>
