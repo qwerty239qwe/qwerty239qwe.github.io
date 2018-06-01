@@ -61,22 +61,26 @@
 </div>
 <script>
   //$(".maincontent").hide();
-
-  var maincontent = document.getElementByClassName("maincontent");
-  var ab = document.getElementByClassName("ab");
-  var mem = document.getElementByClassName("mem");
-  var pub = document.getElementByClassName("pub");
-  var pro = document.getElementByClassName("pro");
-  var cont = document.getElementByClassName("cont");
-  var abcont = document.getElementByClassName("abcont");
+  var maincontent = document.getElementsByClassName("maincontent")[0];
+  var ab = document.getElementsByClassName("ab")[0];
+  var mem = document.getElementsByClassName("mem")[0];
+  var pub = document.getElementsByClassName("pub")[0];
+  var pro = document.getElementsByClassName("pro")[0];
+  var cont = document.getElementsByClassName("cont")[0];
+  var abcont = document.getElementsByClassName("abcont")[0];
+  var memcont = document.getElementsByClassName("memcont")[0];
+  var pubcont = document.getElementsByClassName("pubcont")[0];
+  var procont = document.getElementsByClassName("procont")[0];
+  var contcont = document.getElementsByClassName("contcont")[0];
+  var homepage = document.getElementsByClassName("homepage")[0];
   function fadeIn(ele, time){
     ele.style.opacity = 0;
     var last = +new Date();
     var tick = function() {
-      el.style.opacity = +el.style.opacity + (new Date() - last) / time;
+      ele.style.opacity = +ele.style.opacity + (new Date() - last) / time;
       last = +new Date();
 
-      if (+el.style.opacity < 1) {
+      if (+ele.style.opacity < 1) {
         (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
       }
     };
@@ -85,157 +89,42 @@
   };
 
   maincontent.style.display = 'none';
-  /*
-$(".ab").click(function() {
-  $(".ab").addClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".abcont").fadeIn();
-  $(".memcont").hide();
-  $(".pubcont").hide();
-  $(".procont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-  */
 
-  ab.onclick(function(){
-    ab.classList.add("clicked");
+  function click(type,conttype){
+    ab.classList.remove("clicked");
     mem.classList.remove("clicked");
     pub.classList.remove("clicked");
     pro.classList.remove("clicked");
     cont.classList.remove("clicked");
+    type.classList.add('clicked');
     maincontent.style.display='block';
-    fadeIn(abcont,800);
-    document.getElementByClassName("memcont").style.display = 'none';
-    document.getElementByClassName("pubcont").style.display = 'none';
-    document.getElementByClassName("procont").style.display = 'none';
-    document.getElementByClassName("contcont").style.display = 'none';
-    document.getElementByClassName("homepage").style.display = 'none';
-  });
-/*
-$(".mem").click(function() {
-  $(".mem").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".memcont").fadeIn();
-  $(".abcont").hide();
-  $(".pubcont").hide();
-  $(".procont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-*/
-    document.getElementByClassName("mem").onclick(function(){
-      document.getElementByClassName("mem").addClass("clicked");
-      document.getElementByClassName("ab").removeClass("clicked");
-      document.getElementByClassName("pub").removeClass("clicked");
-      document.getElementByClassName("pro").removeClass("clicked");
-      document.getElementByClassName("cont").removeClass("clicked");
-      document.getElementByClassName("maincontent").show(700);
-      document.getElementByClassName("memcont").fadeIn();
-      document.getElementByClassName("abcont").hide();
-      document.getElementByClassName("pubcont").hide();
-      document.getElementByClassName("procont").hide();
-      document.getElementByClassName("contcont").hide();
-      document.getElementByClassName("homepage").hide();
-    });
-/*
-$(".pub").click(function() {
-  $(".pub").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".pubcont").fadeIn();
-  $(".abcont").hide();
-  $(".memcont").hide();
-  $(".procont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-*/
-    document.getElementByClassName("pub").onclick(function(){
-      document.getElementByClassName("pub").addClass("clicked");
-      document.getElementByClassName("ab").removeClass("clicked");
-      document.getElementByClassName("mem").removeClass("clicked");
-      document.getElementByClassName("pro").removeClass("clicked");
-      document.getElementByClassName("cont").removeClass("clicked");
-      document.getElementByClassName("maincontent").show(700);
-      document.getElementByClassName("pubcont").fadeIn();
-      document.getElementByClassName("abcont").hide();
-      document.getElementByClassName("memcont").hide();
-      document.getElementByClassName("procont").hide();
-      document.getElementByClassName("contcont").hide();
-      document.getElementByClassName("homepage").hide();
-    });
-/*
-$(".pro").click(function() {
-  $(".pro").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".cont").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".procont").fadeIn();
-  $(".abcont").hide();
-  $(".pubcont").hide();
-  $(".memcont").hide();
-  $(".contcont").hide();
-  $(".homepage").hide();
-});
-*/
-    document.getElementByClassName("pro").onclick(function(){
-      document.getElementByClassName("pro").addClass("clicked");
-      document.getElementByClassName("ab").removeClass("clicked");
-      document.getElementByClassName("pub").removeClass("clicked");
-      document.getElementByClassName("mem").removeClass("clicked");
-      document.getElementByClassName("cont").removeClass("clicked");
-      document.getElementByClassName("maincontent").show(700);
-      document.getElementByClassName("procont").fadeIn();
-      document.getElementByClassName("abcont").hide();
-      document.getElementByClassName("pubcont").hide();
-      document.getElementByClassName("memcont").hide();
-      document.getElementByClassName("contcont").hide();
-      document.getElementByClassName("homepage").hide();
-    });
-/*
-$(".cont").click(function() {
-  $(".cont").addClass("clicked");
-  $(".ab").removeClass("clicked");
-  $(".pub").removeClass("clicked");
-  $(".pro").removeClass("clicked");
-  $(".mem").removeClass("clicked");
-  $(".maincontent").show(700);
-  $(".contcont").fadeIn();
-  $(".abcont").hide();
-  $(".pubcont").hide();
-  $(".procont").hide();
-  $(".memcont").hide();
-  $(".homepage").hide();
-});
-*/
-    document.getElementByClassName("cont").onclick(function(){
-      document.getElementByClassName("cont").addClass("clicked");
-      document.getElementByClassName("ab").removeClass("clicked");
-      document.getElementByClassName("pub").removeClass("clicked");
-      document.getElementByClassName("pro").removeClass("clicked");
-      document.getElementByClassName("mem").removeClass("clicked");
-      document.getElementByClassName("maincontent").show(700);
-      document.getElementByClassName("contcont").fadeIn();
-      document.getElementByClassName("abcont").hide();
-      document.getElementByClassName("pubcont").hide();
-      document.getElementByClassName("procont").hide();
-      document.getElementByClassName("memcont").hide();
-      document.getElementByClassName("homepage").hide();
-    });
+    abcont.style.display = 'none';
+    memcont.style.display = 'none';
+    pubcont.style.display = 'none';
+    procont.style.display = 'none';
+    contcont.style.display = 'none';
+    homepage.style.display = 'none';
+    conttype.style.display = 'block';
+    fadeIn(conttype,800);
+  };
+
+  ab.onclick = function(){
+    click(ab,abcont);
+  };
+
+  mem.onclick = function(){
+    click(mem,memcont);
+  };
+
+  pub.onclick = function(){
+    click(pub,pubcont);
+  };
+  pro.onclick = function(){
+    click(pro,procont);
+  };
+  cont.onclick = function(){
+    click(cont,contcont);
+  };
 
 </script>
 </body>
