@@ -173,7 +173,7 @@ html {
 }
 .content .text {
   position: relative;
-  top: -200px;
+  top: 0px;
 }
 .content .text .homepage {
   margin-top: 200px;
