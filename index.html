@@ -61,7 +61,30 @@
 </div>
 <script>
   //$(".maincontent").hide();
-  document.getElementByClassName("maincontent").style.display = 'none';
+
+  var maincontent = document.getElementByClassName("maincontent");
+  var ab = document.getElementByClassName("ab");
+  var mem = document.getElementByClassName("mem");
+  var pub = document.getElementByClassName("pub");
+  var pro = document.getElementByClassName("pro");
+  var cont = document.getElementByClassName("cont");
+  var abcont = document.getElementByClassName("abcont");
+  function fadeIn(ele, time){
+    ele.style.opacity = 0;
+    var last = +new Date();
+    var tick = function() {
+      el.style.opacity = +el.style.opacity + (new Date() - last) / time;
+      last = +new Date();
+
+      if (+el.style.opacity < 1) {
+        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+      }
+    };
+
+    tick();
+  };
+
+  maincontent.style.display = 'none';
   /*
 $(".ab").click(function() {
   $(".ab").addClass("clicked");
@@ -78,19 +101,20 @@ $(".ab").click(function() {
   $(".homepage").hide();
 });
   */
-  document.getElementByClassName("ab").onclick(function(){
-    document.getElementByClassName("ab").addClass("clicked");
-    document.getElementByClassName("mem").removeClass("clicked");
-    document.getElementByClassName("pub").removeClass("clicked");
-    document.getElementByClassName("pro").removeClass("clicked");
-    document.getElementByClassName("cont").removeClass("clicked");
-    document.getElementByClassName("maincontent").show(700);
-    document.getElementByClassName("abcont").fadeIn();
-    document.getElementByClassName("memcont").hide();
-    document.getElementByClassName("pubcont").hide();
-    document.getElementByClassName("procont").hide();
-    document.getElementByClassName("contcont").hide();
-    document.getElementByClassName("homepage").hide();
+
+  ab.onclick(function(){
+    ab.classList.add("clicked");
+    mem.classList.remove("clicked");
+    pub.classList.remove("clicked");
+    pro.classList.remove("clicked");
+    cont.classList.remove("clicked");
+    maincontent.style.display='block';
+    fadeIn(abcont,800);
+    document.getElementByClassName("memcont").style.display = 'none';
+    document.getElementByClassName("pubcont").style.display = 'none';
+    document.getElementByClassName("procont").style.display = 'none';
+    document.getElementByClassName("contcont").style.display = 'none';
+    document.getElementByClassName("homepage").style.display = 'none';
   });
 /*
 $(".mem").click(function() {
