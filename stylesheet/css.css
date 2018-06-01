@@ -130,6 +130,8 @@ html {
 }
 .content .nav {
   display: flex;
+  width: 1000px;
+  height: 30px;
   margin: 20px 40px;
   font-family: "Oswald";
 }
@@ -139,6 +141,7 @@ html {
   padding: 0px 10px 0px 10px;
   text-align: center;
   cursor: pointer;
+  z-index: 1;
 }
 .content .ab:hover {
   text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
