@@ -135,7 +135,7 @@ html {
   margin: 20px 40px;
   font-family: "Oswald";
 }
-.content .nav .ab, .content .nav .mem, .content .nav .pub, .content .nav .pro, .content .nav .cont, .content .nav .home {
+.content .nav .ab, .content .nav .mem, .content .nav .pub, .content .nav .pro, .content .nav .cont, .content .nav .home, .content .nav .news {
   width: 300px;
   height: 30px;
   padding: 0px 10px 0px 10px;
@@ -143,8 +143,18 @@ html {
   cursor: pointer;
   z-index: 1;
 }
+.content .nav .home {
+  background-color:Tomato;
+  border-radius: 50%;
+  width : 28px;
+  height : 30px;
+  cursor: pointer;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px;
+  opacity : 0.5;
+}
 .content .ab:hover {
-  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
+  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.5);
   transition-duration: 0.8s;
 }
 .content .ab:active {
@@ -152,24 +162,29 @@ html {
   animation: ani;
 }
 .content .mem:hover {
-  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
+  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.5);
   transition-duration: 0.8s;
 }
 .content .pub:hover {
-  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
+  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.5);
   transition-duration: 0.8s;
 }
 .content .pro:hover {
-  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
+  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.5);
+  transition-duration: 0.8s;
+}
+.content .news:hover {
+  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.5);
   transition-duration: 0.8s;
 }
 .content .cont:hover {
-  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
+  text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.5);
   transition-duration: 0.8s;
 }
 .content .clicked {
   text-shadow: 4px 4px 4px rgba(100, 100, 100, 0.3);
   color: #C297B8;
+  border-bottom: 3px solid #C297B8;
 }
 .content .text {
   position: relative;
@@ -196,7 +211,7 @@ html {
   font-weight: 300;
 }
 .content .text .board {
-  width: 800px;
+  width: 1000px;
   height: 500px;
   border-color: white;
   background-color: white;
@@ -204,7 +219,7 @@ html {
   background-image: -webkit-linear-gradient(#F9D4D4, #D1A9A9);
   opacity: 0.2;
   z-index: -0.5;
-  margin-left: 75px;
+  margin-left: 50px;
   margin-top: 30px;
   position: absolute;
 }
@@ -213,7 +228,7 @@ html {
   background-color: #B3B3B3;
 }
 .content .text .minorcont {
-  width: 800px;
+  width: 1000px;
   height: 500px;
   font-size: 18px;
   font-family: "微軟正黑體";
@@ -223,7 +238,7 @@ html {
   z-index: 0;
   overflow: scroll;
 }
-.content .text .minorcont .abtitle, .content .text .minorcont .memtitle, .content .text .minorcont .pubtitle, .content .text .minorcont .protitle, .content .text .minorcont .conttitle, .content .text .minorcont .contword {
+.content .text .minorcont .abtitle, .content .text .minorcont .memtitle, .content .text .minorcont .pubtitle, .content .text .minorcont .protitle, .content .text .minorcont .conttitle, .content .text .minorcont .contword, .content .text .minorcont .newtitle, .content .text .minorcont .newword{
   font-size: 25px;
   font-family: "Simsun";
   margin-left: 40px;
