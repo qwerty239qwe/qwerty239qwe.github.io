@@ -240,6 +240,21 @@ html {
   background: rgb(219,219,219);
 }
 
+.outter,.maincontent{
+  width: 1060px;
+  height: 500px;
+}
+
+.outter{
+    position: relative; left: 0;
+    overflow: hidden;
+}
+.inner {
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .content .text .minorcont {
   width: 1000px;
   height: 500px;
@@ -249,7 +264,7 @@ html {
   margin-left: 75px;
   margin-top: 30px;
   z-index: 0;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .content .text .minorcont .abtitle, .content .text .minorcont .memtitle, .content .text .minorcont .pubtitle, .content .text .minorcont .protitle, .content .text .minorcont .conttitle, .content .text .minorcont .contword, .content .text .minorcont .newtitle, .content .text .minorcont .newword{
   font-size: 25px;
