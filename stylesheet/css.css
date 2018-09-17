@@ -198,7 +198,7 @@ html {
 }
 .content .text {
   position: relative;
-  top: 0px;
+  top: 100px;
 }
 .content .text .homepage {
   margin-top: 200px;
@@ -276,42 +276,65 @@ html {
   z-index: 0;
   overflow-y: scroll;
 }
-.content .text .minorcont .abtitle, .content .text .minorcont .memtitle, .content .text .minorcont .pubtitle, .content .text .minorcont .protitle, .content .text .minorcont .conttitle, .content .text .minorcont .contword, .content .text .minorcont .newtitle, .content .text .minorcont .newword{
+.content .text .minorcont .abtitle, .content .text .minorcont .pubtitle, .content .text .minorcont .protitle, .content .text .minorcont .conttitle, .content .text .minorcont .contword, .content .text .minorcont .newtitle, .content .text .minorcont .newword {
   font-size: 25px;
   font-family: "Simsun";
   margin-left: 40px;
   margin-right: 40px;
-  margin-top: 20px;
+  margin-top: 80px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgba(30,30,30,0.6);
   opacity: 1;
 }
+
+
+.content .text .minorcont .subtitle{
+  font-size: 25px;
+  font-family: "Simsun";
+  margin-left: 0px;
+  margin-right: 40px;
+  margin-top: 80px;
+  padding-bottom:30px;
+  border-bottom: 2px dotted rgba(30,30,30,0.6);
+  opacity: 1;
+}
+
 .content .text .minorcont .abword, .content .text .minorcont .memword, .content .text .minorcont .pubword, .content .text .minorcont .proword {
-  margin: 20px 40px;
+  margin: 40px 40px;
   opacity: 10;
 }
 .content .text .memcont .memup {
   display: flex;
   margin-top: 50px;
   margin-left: 30px;
+  align:center;
 }
 .content .text .memcont .memup .mempic {
   width: 180px;
   height: 240px;
-  margin-left: 50px;
+  margin-left: 10px;
 }
 
 .content .text .memcont .memup .memtitle:hover {
-  text-shadow: 8px 8px 2px rgba(100, 100, 100, 0.7);
+  text-shadow: 8px 8px 2px rgba(100, 100, 100, 0.3);
   border-left : 10px solid tomato;
   padding: 0px 10px;
+  border-bottom: 1px solid rgba(30,30,30,0);
   transition-duration: 0.5s;
 }
 
 .content .text .memcont .memup .memtitle {
+  display: inline-block;
   width: 300px;
   height: 100px;
-  margin-left: 15px;
-  margin-top: 74px;
-  display: inline-block;
+  font-size: 25px;
+  font-family: "Simsun";
+  margin-left: 40px;
+  margin-top: 80px;
+  margin-right: 40px;
+  padding-bottom: 0px;
+  border-bottom: 2px solid rgba(30,30,30,0.6);
+  opacity: 1;
 }
 .content .text .memcont .memlifepic {
   width: 360px;
@@ -320,11 +343,37 @@ html {
   margin-left: 93px;
 }
 
+/* pics hover
 .content .text .memcont .memlifepic:hover {
   box-shadow: 4px 4px 2px rgba(0.7,0.1,0.1,0.5);
   width: 390px;
   height: 260px;
   transition-duration: 0.5s;
+}
+*/
+
+.content .text .memcont .fixPic1 {
+  background-image: url('https://upload.cc/i1/2018/03/27/KoUehm.jpg');
+
+  height : 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover ;
+  margin: 30px 0px;
+  padding: 30px;
+}
+
+.content .text .memcont .fixPic2 {
+  background-image: url('https://upload.cc/i1/2018/03/27/dwNaMi.jpg');
+
+  height : 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover ;
+  margin: 30px 0px;
+  padding: 30px;
 }
 
 .content .text .memcont .propic1 {
