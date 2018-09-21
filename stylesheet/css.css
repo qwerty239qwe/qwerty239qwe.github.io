@@ -222,7 +222,7 @@ html {
 }
 .content .text .board {
   width: 1000px;
-  height: 500px;
+  height: 70%;
   border-color: white;
   background-color: white;
   border-radius: 10px;
@@ -252,7 +252,7 @@ html {
 
 .outter,.maincontent{
   width: 1060px;
-  height: 500px;
+  height: 700px;
 }
 
 .outter{
@@ -267,7 +267,7 @@ html {
 
 .content .text .minorcont {
   width: 1000px;
-  height: 500px;
+  height: 70%;
   font-size: 18px;
   font-family: "MicroBlack";
   position: absolute;
@@ -374,6 +374,29 @@ html {
   background-size: cover ;
   margin: 30px 0px;
   padding: 30px;
+}
+
+
+
+#video1{
+  width:100%;
+  opacity: 0.7;
+  margin-bottom:-40px;
+  margin-top:-60px;
+  left: -40px;
+  padding-bottom: -200px;
+  position: relative;
+}
+
+.videoDescript{
+  background-color: rgba(0,0,0,0.4);
+  color: rgb(255,255,255);
+  z-index: 1;
+  width: 92%;
+  left: 0px;
+  margin-top: -48px;
+  padding: 20px;
+  position: relative;
 }
 
 .content .text .memcont .propic1 {
