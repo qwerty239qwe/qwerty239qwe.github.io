@@ -1,5 +1,10 @@
 {
-  "total": 32000,
-  "perPackage": {},
-  "fetchedAt": null
+  "total": 35023,
+  "perPackage": {
+    "pipegem": 4458,
+    "sctenifoldpy": 16682,
+    "biodbs": 10886,
+    "ppi-net-builder": 2997
+  },
+  "fetchedAt": "2026-05-11T07:59:51.706Z"
 }

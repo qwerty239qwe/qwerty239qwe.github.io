@@ -30,6 +30,10 @@ export type Repo = {
   tags?: string[];
   /** PyPI distribution name (lowercase). Renders a pepy.tech download badge. */
   pypi?: string;
+  /** ReadTheDocs project slug. Renders an RTD build badge. */
+  readthedocs?: string;
+  /** GitHub Actions workflow filename (e.g. "ci.yml"). Renders a CI status badge. */
+  ci?: string;
 };
 
 export type Education = {
@@ -66,8 +70,11 @@ export const skillGroups: SkillGroup[] = [
     items: [
       { id: "rna-seq", label: "RNA-seq pipelines" },
       { id: "scrna", label: "Single-cell RNA-seq" },
-      { id: "ngs", label: "NGS tools (STAR, samtools, fastp)" },
-      { id: "ppi", label: "PPI / regulatory networks" },
+      { id: "star", label: "STAR" },
+      { id: "samtools", label: "samtools" },
+      { id: "fastp", label: "fastp" },
+      { id: "ppi-network", label: "PPI network" },
+      { id: "reg-network", label: "Regulatory network" },
       { id: "multi-omics", label: "Multi-omics integration" },
       { id: "gem", label: "Genome-scale metabolic modeling" },
       { id: "ode", label: "ODE / mechanistic modeling" },
@@ -78,10 +85,13 @@ export const skillGroups: SkillGroup[] = [
     id: "ml",
     name: "ML & MLOps",
     items: [
-      { id: "pytorch", label: "PyTorch / Lightning" },
+      { id: "pytorch", label: "PyTorch" },
+      { id: "lightning", label: "PyTorch Lightning" },
       { id: "sklearn", label: "scikit-learn" },
-      { id: "skimage", label: "scikit-image / OpenCV" },
-      { id: "ray-optuna", label: "Ray / Optuna" },
+      { id: "skimage", label: "scikit-image" },
+      { id: "opencv", label: "OpenCV" },
+      { id: "ray", label: "Ray" },
+      { id: "optuna", label: "Optuna" },
       { id: "shap", label: "SHAP" },
       { id: "imblearn", label: "imbalanced-learn" },
     ],
@@ -90,7 +100,9 @@ export const skillGroups: SkillGroup[] = [
     id: "compute",
     name: "Scientific computing",
     items: [
-      { id: "pandas", label: "Pandas / NumPy / SciPy" },
+      { id: "pandas", label: "Pandas" },
+      { id: "numpy", label: "NumPy" },
+      { id: "scipy", label: "SciPy" },
       { id: "statsmodels", label: "Statsmodels" },
       { id: "networkx", label: "NetworkX" },
       { id: "gurobi", label: "Gurobi" },
@@ -102,7 +114,8 @@ export const skillGroups: SkillGroup[] = [
     items: [
       { id: "python", label: "Python" },
       { id: "r", label: "R" },
-      { id: "sql", label: "SQL / PostgreSQL" },
+      { id: "sql", label: "SQL" },
+      { id: "postgres", label: "PostgreSQL" },
       { id: "js", label: "JavaScript" },
       { id: "bash", label: "Bash" },
     ],
@@ -122,7 +135,8 @@ export const skillGroups: SkillGroup[] = [
     items: [
       { id: "docker", label: "Docker" },
       { id: "ci-cd", label: "GitHub Actions (CI/CD)" },
-      { id: "linux-hpc", label: "Linux / HPC" },
+      { id: "linux", label: "Linux" },
+      { id: "hpc", label: "HPC" },
     ],
   },
 ];
@@ -149,6 +163,7 @@ export const work: Work[] = [
       },
       {
         text: "Developed MitoTox, a web-based mitochondrial toxicity database (PostgreSQL + Django) with 100,000+ chemicals — cited 40+ times and used in predictive toxicology research.",
+        repo: "MitoTOX",
       },
       {
         text: "Shipped open-source bioinformatics tools with {DOWNLOADS} PyPI downloads; full CI/CD, unit tests, and Dockerized environments for reproducibility.",
@@ -225,8 +240,10 @@ export const repos: Repo[] = [
     url: "https://github.com/qwerty239qwe/scTenifoldpy",
     language: "Python",
     stars: 60,
-    tags: ["python", "scrna", "networkx", "ppi", "ci-cd"],
+    tags: ["python", "scrna", "networkx", "ppi-network", "reg-network", "ci-cd", "ray", "pandas", "numpy", "scipy"],
     pypi: "sctenifoldpy",
+    readthedocs: "sctenifoldpy",
+    ci: "ci.yml",
   },
   {
     name: "pipeGEM",
@@ -234,8 +251,10 @@ export const repos: Repo[] = [
       "Integrate omics data with genome-scale metabolic models and run comparative constraint-based analysis.",
     url: "https://github.com/qwerty239qwe/pipeGEM",
     language: "Python",
-    tags: ["python", "gem", "multi-omics", "rna-seq", "gurobi", "networkx", "ci-cd"],
+    tags: ["python", "gem", "multi-omics", "rna-seq", "gurobi", "networkx", "ci-cd", "pandas", "numpy", "scipy"],
     pypi: "pipegem",
+    readthedocs: "pipegem",
+    ci: "ci.yml",
   },
   {
     name: "biodbs",
@@ -243,8 +262,10 @@ export const repos: Repo[] = [
       "Unified Python interface for fetching and structuring data from 12+ biological databases (KEGG, NCBI, ChEMBL, …).",
     url: "https://github.com/qwerty239qwe/biodbs",
     language: "Python",
-    tags: ["python", "sql", "ci-cd"],
+    tags: ["python", "sql", "ci-cd", "pandas"],
     pypi: "biodbs",
+    readthedocs: "biodbs",
+    ci: "ci.yml",
   },
   {
     name: "ppi_net_builder",
@@ -252,8 +273,9 @@ export const repos: Repo[] = [
       "Protein–protein interaction network construction and analysis in Python.",
     url: "https://github.com/qwerty239qwe/ppi_net_builder",
     language: "Python",
-    tags: ["python", "ppi", "networkx"],
+    tags: ["python", "ppi-network", "networkx", "ci-cd"],
     pypi: "ppi-net-builder",
+    ci: "python-package.yml",
   },
   {
     name: "confocal_mito_analysis",
@@ -261,7 +283,7 @@ export const repos: Repo[] = [
       "Confocal image analysis pipeline for mitochondrial morphology — segmentation and quantification (NTU Mito Lab).",
     url: "https://github.com/ntumitolab/confocal_mito_analysis",
     language: "Python",
-    tags: ["python", "image-bio", "skimage", "sklearn"],
+    tags: ["python", "image-bio", "skimage", "sklearn", "pandas", "numpy", "scipy"],
   },
   {
     name: "dox-ac16-omics-analysis",
@@ -269,7 +291,15 @@ export const repos: Repo[] = [
       "Multi-omics analysis pipeline for doxorubicin-treated AC16 cardiomyocytes — companion code for the npj Syst. Biol. Appl. paper.",
     url: "https://github.com/qwerty239qwe/dox-ac16-omics-analysis",
     language: "Python",
-    tags: ["python", "rna-seq", "multi-omics", "ode", "pandas"],
+    tags: ["python", "rna-seq", "multi-omics", "ode", "pandas", "numpy", "scipy", "gem", "r", "skimage", "opencv", "star", "fastp", "samtools"],
+  },
+  {
+    name: "MitoTOX",
+    description:
+      "Web-based mitochondrial toxicity database — 100,000+ chemicals, PostgreSQL + Django. Cited 40+ times in predictive toxicology research.",
+    url: "https://www.mitotox.org/",
+    language: "Django / PostgreSQL",
+    tags: ["python", "django", "postgres", "sql", "react", "js"],
   },
   {
     name: "submission-nav",

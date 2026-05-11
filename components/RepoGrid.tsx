@@ -40,23 +40,65 @@ export function RepoGrid() {
               )}
             </div>
             <p className="mt-2 text-sm text-muted">{r.description}</p>
-            {r.pypi && (
-              <a
-                href={`https://pypi.org/project/${r.pypi}/`}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-block"
-                aria-label={`PyPI downloads for ${r.pypi}`}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`https://static.pepy.tech/personalized-badge/${r.pypi}?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads`}
-                  alt={`${r.pypi} downloads`}
-                  loading="lazy"
-                  decoding="async"
-                  height={20}
-                />
-              </a>
+            {(r.pypi || r.readthedocs || r.ci) && (
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                {r.pypi && (
+                  <a
+                    href={`https://pypi.org/project/${r.pypi}/`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`PyPI downloads for ${r.pypi}`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`https://static.pepy.tech/personalized-badge/${r.pypi}?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads`}
+                      alt={`${r.pypi} downloads`}
+                      loading="lazy"
+                      decoding="async"
+                      height={20}
+                    />
+                  </a>
+                )}
+                {r.ci && (() => {
+                  const m = r.url.match(/github\.com\/([^/]+)\/([^/]+)/);
+                  if (!m) return null;
+                  const [, owner, repo] = m;
+                  return (
+                    <a
+                      href={`https://github.com/${owner}/${repo}/actions/workflows/${r.ci}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`CI status for ${repo}`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`https://github.com/${owner}/${repo}/actions/workflows/${r.ci}/badge.svg`}
+                        alt={`${repo} CI`}
+                        loading="lazy"
+                        decoding="async"
+                        height={20}
+                      />
+                    </a>
+                  );
+                })()}
+                {r.readthedocs && (
+                  <a
+                    href={`https://${r.readthedocs}.readthedocs.io/`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`ReadTheDocs for ${r.readthedocs}`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`https://readthedocs.org/projects/${r.readthedocs}/badge/?version=latest`}
+                      alt={`${r.readthedocs} docs`}
+                      loading="lazy"
+                      decoding="async"
+                      height={20}
+                    />
+                  </a>
+                )}
+              </div>
             )}
             {tags.length > 0 && (
               <ul className="mt-3 flex flex-wrap gap-1.5">
