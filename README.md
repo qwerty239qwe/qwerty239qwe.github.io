@@ -1,39 +1,24 @@
-# yute portfolio
+# qwerty239qwe.github.io
 
-Personal portfolio site. Next.js 16 + Tailwind v4, static-exported and deployed to GitHub Pages.
+Personal portfolio of **Yu-Te Lin** — bioinformatics scientist (PhD).
 
-## Develop
+**Live:** https://qwerty239qwe.github.io/
 
-```bash
-npm install
-npm run dev          # http://localhost:3000
-```
+The site collects my work history, open-source repositories, publications, and skill graph in one place. Hovering a repo card highlights the matching skills in the side panel; chips link back to their group.
 
-## Edit content
+## What's here
 
-- `content/resume.ts` — profile, work, publications, repos, skills, education
-- `content/posts/*.md` — blog posts (hidden by default)
+- **Resume** — work experience, education, publications, scholarships.
+- **Repositories** — open-source projects with live PyPI download badges (pepy.tech). Total downloads across my packages are fetched at build time.
+- **Skills** — stratified into Bioinformatics, ML & MLOps, Scientific computing, Languages, Web & desktop, DevOps. Cross-linked with the repos above.
+- **Blog** — bioinformatics notes (currently unlinked; coming soon).
 
-## Build
+## Tech
 
-```bash
-npm run build        # outputs static site to ./out
-```
+Next.js 16 (static export) · Tailwind v4 · TypeScript · React Markdown · GitHub Actions → GitHub Pages.
 
-## Deploy
+## Contact
 
-Push to `main`. GitHub Actions (`.github/workflows/deploy.yml`) builds and deploys to GitHub Pages.
-
-- **User site repo** (`<username>.github.io`): served at `https://<username>.github.io/`, `basePath` empty.
-- **Project site repo** (any other name): served at `https://<username>.github.io/<repo>/`, `basePath` set automatically.
-
-Enable Pages in repo settings → Pages → Source: "GitHub Actions".
-
-## Blog visibility
-
-The `/blog` route is always generated but hidden from navigation. To surface it:
-
-- In the repo, go to Settings → Secrets and variables → Actions → Variables.
-- Add a repository variable `NEXT_PUBLIC_BLOG_ENABLED` with value `true`.
-
-To switch the blog from local markdown to Supabase later, implement the same loader interface (`getAllPosts`, `getPostBySlug`, `getAllSlugs`) in `lib/supabase.ts` and re-export from `lib/blog.ts`.
+- Email: qwerty239qwe@gmail.com
+- LinkedIn: https://www.linkedin.com/in/yu-te-lin-4a6142139/
+- GitHub: https://github.com/qwerty239qwe
