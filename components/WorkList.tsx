@@ -3,37 +3,46 @@ import { formatDownloads } from "@/lib/downloads";
 
 const DRAFT_NOTE = "Manuscript in preparation, to be submitted soon.";
 
-function renderText(text: string) {
-  let nodes: (string | React.ReactNode)[] = [text];
+type Node = string | React.ReactElement;
 
-  if (typeof nodes[0] === "string" && (nodes[0] as string).includes("{DOWNLOADS}")) {
-    const parts = (nodes[0] as string).split("{DOWNLOADS}");
-    nodes = parts.flatMap((p, i) =>
-      i === 0
-        ? [p]
-        : [
-            <span key={`dl-${i}`} className="font-medium text-foreground">
-              {formatDownloads()}
-            </span>,
-            p,
-          ]
-    );
+function renderText(text: string): Node[] {
+  let nodes: Node[] = [text];
+
+  if (typeof nodes[0] === "string" && nodes[0].includes("{DOWNLOADS}")) {
+    const parts = nodes[0].split("{DOWNLOADS}");
+    const out: Node[] = [];
+    parts.forEach((p, i) => {
+      if (i > 0) {
+        out.push(
+          <span key={`dl-${i}`} className="font-medium text-foreground">
+            {formatDownloads()}
+          </span>
+        );
+      }
+      out.push(p);
+    });
+    nodes = out;
   }
 
-  return nodes.flatMap((n, i) => {
-    if (typeof n !== "string" || !n.includes(DRAFT_NOTE)) return [n];
+  const final: Node[] = [];
+  nodes.forEach((n, i) => {
+    if (typeof n !== "string" || !n.includes(DRAFT_NOTE)) {
+      final.push(n);
+      return;
+    }
     const [before, after = ""] = n.split(DRAFT_NOTE);
-    return [
-      before,
+    final.push(before);
+    final.push(
       <span
         key={`draft-${i}`}
         className="ml-1 text-[10px] uppercase tracking-wide text-muted/70 italic"
       >
         {DRAFT_NOTE}
-      </span>,
-      after,
-    ];
+      </span>
+    );
+    final.push(after);
   });
+  return final;
 }
 
 export function WorkList() {
