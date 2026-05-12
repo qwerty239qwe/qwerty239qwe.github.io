@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { NameCard } from "./NameCard";
+import { NameCard, type CardOrientation } from "./NameCard";
 
 export function CardModeToggle() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [orientation, setOrientation] = useState<CardOrientation>("landscape");
 
   useEffect(() => setMounted(true), []);
 
@@ -46,9 +47,28 @@ export function CardModeToggle() {
               if (e.target === e.currentTarget) setOpen(false);
             }}
           >
-            <div className="w-full max-w-sm my-auto">
-              <NameCard />
-              <div className="mt-4 flex justify-center">
+            <div
+              className={
+                orientation === "portrait"
+                  ? "my-auto"
+                  : "w-full max-w-sm my-auto"
+              }
+            >
+              <NameCard orientation={orientation} />
+              <div className="mt-4 flex justify-center gap-2">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOrientation((o) =>
+                      o === "landscape" ? "portrait" : "landscape"
+                    )
+                  }
+                  className="rounded-md border border-white/30 bg-white/10 px-3 py-1.5 text-sm text-white hover:bg-white/20"
+                >
+                  {orientation === "landscape"
+                    ? "Rotate & fit to screen"
+                    : "Back to card view"}
+                </button>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
