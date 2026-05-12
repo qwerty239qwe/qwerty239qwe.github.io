@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import { CardModeToggle } from "./CardModeToggle";
 
 const blogLinkVisible = process.env.NEXT_PUBLIC_BLOG_ENABLED === "true";
 
@@ -21,7 +22,7 @@ export function NavBar() {
     <header className="sticky top-0 z-40 backdrop-blur bg-background/80 border-b border-border">
       <nav className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="font-semibold tracking-tight">
-          yute
+          Yu-Te Lin
         </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm">
@@ -34,10 +35,12 @@ export function NavBar() {
               {l.label}
             </Link>
           ))}
+          <CardModeToggle />
           <ThemeToggle />
         </div>
 
         <div className="md:hidden flex items-center gap-2">
+          <CardModeToggle />
           <ThemeToggle />
           <button
             type="button"

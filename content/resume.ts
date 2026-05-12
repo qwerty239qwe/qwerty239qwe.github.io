@@ -1,6 +1,8 @@
 export type WorkBullet = {
   text: string;
   repo?: string;
+  /** Optional explicit URL override (used when the source isn't a top-level repo). */
+  url?: string;
 };
 
 export type Work = {
@@ -155,7 +157,7 @@ export const work: Work[] = [
     location: "Taipei, Taiwan",
     bullets: [
       {
-        text: "Built a diagnostic RNA-seq classification pipeline using a VAE to compress transcriptomes — AUROC 0.98 (vs. 0.75 baseline), AUPRC 0.88 (vs. 0.34), and ~40× faster inference for rare-disease prediction.",
+        text: "Built a diagnostic RNA-seq classification pipeline using a VAE to compress transcriptomes — AUROC 0.98 (vs. 0.75 baseline), AUPRC 0.88 (vs. 0.34), and ~40× faster inference for rare-disease prediction. Manuscript in preparation, to be submitted soon.",
       },
       {
         text: "Developed pipeGEM, a Python framework integrating RNA-seq with genome-scale metabolic models; adopted by 8+ external research labs.",
@@ -169,7 +171,7 @@ export const work: Work[] = [
         text: "Shipped open-source bioinformatics tools with {DOWNLOADS} PyPI downloads; full CI/CD, unit tests, and Dockerized environments for reproducibility.",
       },
       {
-        text: "Built a PyQt6 desktop app wrapping the RNA-seq + ML inference pipeline so clinicians can run end-to-end transcriptomic analysis through a GUI.",
+        text: "Built a PyQt6 desktop app wrapping the RNA-seq + ML inference pipeline so clinicians can run end-to-end transcriptomic analysis through a GUI. Manuscript in preparation, to be submitted soon.",
       },
       {
         text: "Developed biodbs, a Python utility unifying programmatic access to 12+ biological repositories (KEGG, NCBI, ChEMBL), backing the MitoTox dataset.",
@@ -177,7 +179,8 @@ export const work: Work[] = [
       },
       {
         text: "Built an image-based cell-counting pipeline (scikit-learn, cellpose, OpenCV) that beat commercial counters on non-spherical cells: +0.3 mean IoU, +0.4 mAP.",
-        repo: "confocal_mito_analysis",
+        repo: "img_processor",
+        url: "https://github.com/qwerty239qwe/dox-ac16-omics-analysis/tree/main/img_processor",
       },
       {
         text: "Ported scTenifoldNet/Knk from MATLAB/R to Python for reproducible single-cell network analysis.",

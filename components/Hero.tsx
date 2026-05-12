@@ -1,4 +1,11 @@
 import { profile } from "@/content/resume";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+  PhoneIcon,
+  ScholarIcon,
+} from "./ContactIcons";
 
 export function Hero() {
   return (
@@ -13,30 +20,35 @@ export function Hero() {
       <p className="mt-4 max-w-prose">{profile.summary}</p>
       <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm break-all">
         <li>
-          <a className="hover:underline" href={`mailto:${profile.email}`}>
+          <a className="inline-flex items-center gap-1.5 text-muted hover:text-foreground hover:underline" href={`mailto:${profile.email}`}>
+            <MailIcon />
             {profile.email}
           </a>
         </li>
         {profile.phone && (
           <li>
-            <a className="hover:underline" href={`tel:${profile.phone.replace(/\s+/g, "")}`}>
+            <a className="inline-flex items-center gap-1.5 text-muted hover:text-foreground hover:underline" href={`tel:${profile.phone.replace(/\s+/g, "")}`}>
+              <PhoneIcon />
               {profile.phone}
             </a>
           </li>
         )}
         <li>
-          <a className="hover:underline" href={profile.github} target="_blank" rel="noreferrer">
+          <a className="inline-flex items-center gap-1.5 text-muted hover:text-foreground hover:underline" href={profile.github} target="_blank" rel="noreferrer">
+            <GitHubIcon />
             GitHub
           </a>
         </li>
         <li>
-          <a className="hover:underline" href={profile.linkedin} target="_blank" rel="noreferrer">
+          <a className="inline-flex items-center gap-1.5 text-muted hover:text-foreground hover:underline" href={profile.linkedin} target="_blank" rel="noreferrer">
+            <LinkedInIcon />
             LinkedIn
           </a>
         </li>
         {profile.scholar && (
           <li>
-            <a className="hover:underline" href={profile.scholar} target="_blank" rel="noreferrer">
+            <a className="inline-flex items-center gap-1.5 text-muted hover:text-foreground hover:underline" href={profile.scholar} target="_blank" rel="noreferrer">
+              <ScholarIcon />
               Scholar
             </a>
           </li>
